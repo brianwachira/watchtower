@@ -11,7 +11,7 @@ class NewsTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_news = News('abc-news','ABC-News','This covers every series','www.abc-news.com')
+        self.new_news = News('abc-news','ABC-News','This covers every series','www.abc-news.com','business','en','us')
     
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news,News))
