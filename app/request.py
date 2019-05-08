@@ -24,6 +24,32 @@ def get_sources(Category):
 
     return news_results
 
+def get_sources_news(news_source):
+    '''
+    Function that takes in a news object and returns news from the news object
+    '''
+    newsapi = NewsApiClient(api_key=key)
+
+    top_headlines = newsapi.get_top_headlines(
+                            sources = news_source.news_.id,
+                            language = news_source.language
+                            )    
+    news_source_object = None
+    if top_headlines['articles']:
+        top_headlines_lists = top_headlines['articles']
+
+    for top_headlines_list in top_headlines_lists:
+            author =  top_headlines_list.get('author')
+            title = top_headlines_list.get('title')
+            description = top_headlines_list.get('description')
+            url = top_headlines_list.get('url')
+            urlToImage = top_headlines_list.get('urlToImage')
+            publishedAt = top_headlines_list.get('publishedAt')
+            content = top_headlines_list.get('content')
+
+    news_source_object = news_list.News_List(author,title,description,url,urlToImage,publishedAt,content)
+    
+    return news_source_object
 
 def process_results(news_sources_list):
     '''
