@@ -11,7 +11,7 @@ def index():
     '''
 
     
-    general_news=get_sources('general')
+    general_news= get_sources('general')
     business_news = get_sources('business')
     entertainment_news =get_sources('entertainment')
     health_news= get_sources('health')
