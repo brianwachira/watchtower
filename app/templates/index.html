@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+<!-- Styles block-->
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"
+{% endblock%}
+
+<!-- content block-->
+{% block content%}
+{% if title %}
+<title>{{ title }}</title>
+{% else %}
+<title>Welcome to WatchTower</title>
+{% endif %}
+<h1>{{ message }}</h1>
+{% endblock %}
