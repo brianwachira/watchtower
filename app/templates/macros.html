@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% macro displayNewsList(news_list)%}
+
+    {% for news in news_list%}
+    <div class = "col-md-4 movie-card">    
+        <div class="panel panel-default">
+        <!-- default panel contents-->
+            <div class="panel-heading">{{news.name}}</div>
+                <div class="panel-body">
+                    <p>{{news.description|truncate(150)}}</p>
+                    <button class="btn btn-default">Read Articles</button>
+                </div>
+        </div>
+    </div>
+    {% endfor%}
+{% endmacro %}
