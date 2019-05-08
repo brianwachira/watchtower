@@ -1,5 +1,5 @@
 {% extends 'base.html'%}
-
+{% import 'macros.html' as macro%}
 <!-- Styles block-->
 {% block styles%}
     {{ super() }}
@@ -8,10 +8,33 @@
 
 <!-- content block-->
 {% block content%}
-{% if title %}
-<title>{{ title }}</title>
-{% else %}
-<title>Welcome to WatchTower</title>
-{% endif %}
-<h1>{{ message }}</h1>
-{% endblock %}
+<div class="container-fluid">
+    <!--General news-->
+    <h2 class="text-center">General News</h2>
+    {{macro.displayNewsList(general)}}
+    <br/>
+    <!--Business news-->
+    <h2 class="text-center">Business News</h2>
+    {{macro.displayNewsList(business)}}
+    <br/>
+    <!--Entertainment news-->
+    <h2 class="text-center">Entertainment News</h2>
+    {{macro.displayNewsList(entertainment)}}
+    <br/>
+    <!--Health news-->
+    <h2 class="text-center">Health News</h2>
+    {{macro.displayNewsList(health)}}
+    <br/><br/><br/><br/>
+    <!--Science news-->
+    <h2 class="text-center">Science News</h2>
+    {{macro.displayNewsList(science)}}
+    <br/><br/><br/>
+    <!--Sport news-->
+    <h2 class="text-center">Sports News</h2>
+    {{macro.displayNewsList(sports)}}
+    <br/>
+    <!--Technology news-->
+    <h2 class="text-center">Technology News</h2>
+    {{macro.displayNewsList(technology)}}
+</div>
+{% endblock%}
