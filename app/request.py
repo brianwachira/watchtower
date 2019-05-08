@@ -1,6 +1,6 @@
 from app import app
 from newsapi import NewsApiClient
-from .models import News
+from .models import news
 
  # Getting api key
 key = app.config['NEWS_API_KEY']
@@ -35,12 +35,15 @@ def process_results(news_sources_list):
     '''
     news_results = []
     for news_item in news_sources_list:
-        id = news_item.get('id')
+        news_id = news_item.get('id')
         name = news_item.get('name')
         description = news_item.get('description')
         url = news_item.get('url')
+        category = news_item.get('category')
+        language = news_item.get('language')
+        country = news_item.get('country')
 
-        news_object = News(id,name,description,url)
+        news_object = news.News(news_id,name,description,url,category,language,country)
         news_results.append(news_object)
 
     return news_results
