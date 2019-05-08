@@ -1,6 +1,6 @@
 from app import app
 from newsapi import NewsApiClient
-from .models import news
+from .models import news,news_list
 
  # Getting api key
 key = app.config['NEWS_API_KEY']
