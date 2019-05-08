@@ -13,11 +13,15 @@ def get_sources(Category):
     '''
     newsapi = NewsApiClient(api_key=key)
 
-    news_sources = newsapi.get_sources(
+    news_sources_response = newsapi.get_sources(
                             category= Category,
                             language='en'
                             )
-    
+    if news_sources_response['sources']:
+        news_results_list = news_sources_response['sources']
+
+        news_results = process_results(news_results_list)
+
     return news_results
 
 
