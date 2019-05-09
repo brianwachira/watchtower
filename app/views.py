@@ -22,3 +22,13 @@ def index():
     title = 'Home - Welcome to Watch Tower'
     message = 'Hello World'
     return render_template('index.html',message = message, title = title,general = general_news,business=business_news,entertainment=entertainment_news,health=health_news,science=science_news,sports=sports_news,technology=technology_news)
+
+app.route('/news/<news_source>')
+def show_source_news(news_source):
+    '''
+    View news page function that returns news from news source
+    '''
+    news = get_sources_news(news_source)
+    title = f'{news_source.name}'
+
+    return render_template('source_news.html',title=title,news=news)
