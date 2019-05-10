@@ -20,15 +20,17 @@ def index():
     technology_news=get_sources('technology')
     
     title = 'Home - Welcome to Watch Tower'
+    brandname = 'Welcome to Watch Tower'
+    mantra = 'Get your news from anywhere in the world'
     message = 'Hello World'
-    return render_template('index.html',message = message, title = title,general = general_news,business=business_news,entertainment=entertainment_news,health=health_news,science=science_news,sports=sports_news,technology=technology_news)
+    return render_template('index.html',message = message, title = title,brandname = brandname, mantra = mantra,general = general_news,business=business_news,entertainment=entertainment_news,health=health_news,science=science_news,sports=sports_news,technology=technology_news)
 
-app.route('/news/<news_source>')
-def show_source_news(news_source):
+@app.route('/news/<news_id>')
+def news(news_id):
     '''
     View news page function that returns news from news source
     '''
-    news = get_sources_news(news_source)
-    title = f'{news_source.name}'
+    news = get_sources_news(news_id)
+    title = f'{news_id}'
 
     return render_template('source_news.html',title=title,news=news)
