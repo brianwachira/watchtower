@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+<!-- Content block-->
+{% block content%}
+    <div class="container-fluid">
+        <h2 class="text-center">{{title}}</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <!--Display news source list-->
+                {{macro.displayNewsSourceList(news)}}
+            </div>
+        <div>
+    </div>
+{% endblock%}
