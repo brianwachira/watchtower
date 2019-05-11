@@ -1,11 +1,13 @@
-from app import app
 from newsapi import NewsApiClient
-from .models import news,news_list
+from .models import News,News_List
 
  # Getting api key
-key = app.config['NEWS_API_KEY']
+key = None
 
-
+def configure_request(app):
+    global key
+    key = app.config['NEWS_API_KEY']
+    
 
 def get_sources(Category):
     '''
@@ -69,7 +71,7 @@ def process_results(news_sources_list):
         language = news_item.get('language')
         country = news_item.get('country')
 
-        news_object = news.News(news_id,name,description,url,category,language,country)
+        news_object = News(news_id,name,description,url,category,language,country)
         news_results.append(news_object)
 
     return news_results
