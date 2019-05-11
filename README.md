@@ -7,12 +7,15 @@
 WatchTower is a web application that allows a user to catch up with the current affairs happening all over the world.
 The website has the home page, that has a list of all sources of news sorted in categories.
 A user will have to click on `Read Articles` on a specific source to view artciles on the site.
+## Link to live site
+[Here you go :wink:](https://watchtower197.herokuapp.com/)
+
 ## Specifications
 | Behavior            | Input                         | Output                        | 
 | ------------------- | ----------------------------- | ----------------------------- |
 |View  sources| Click 'Read Articles' on source | Displays source news |
 
-## Prerequiites
+## Prerequites
     - Python 3.6 required
 
 ## Set-up and Installation
