@@ -49,8 +49,9 @@ def get_sources_news(news_id):
             publishedAt = top_headlines_list.get('publishedAt')
             content = top_headlines_list.get('content')
 
-            news_source_object = News_List(author,title,description,url,urlToImage,publishedAt,content)
-            news_source_results.append(news_source_object)
+            if(urlToImage):
+                news_source_object = News_List(author,title,description,url,urlToImage,publishedAt,content)
+                news_source_results.append(news_source_object)
     return news_source_results
 
 def process_results(news_sources_list):
