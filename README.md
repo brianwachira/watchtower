@@ -20,7 +20,7 @@ A user will have to click on `Read Articles` on a specific source to view artcil
 
 ## Set-up and Installation
     - Clone the Repository
-    - Edit the start.sh file with your api key from the [https://newsapi.org/docs/get-started]
+    - Edit the start.sh file with your api key from https://newsapi.org/docs/get-started
     - Run chmod a+x start.py
     - Run ./start.py
 
