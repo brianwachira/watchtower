@@ -49,7 +49,7 @@ def get_sources_news(news_id):
             publishedAt = top_headlines_list.get('publishedAt')
             content = top_headlines_list.get('content')
 
-            news_source_object = news_list.News_List(author,title,description,url,urlToImage,publishedAt,content)
+            news_source_object = News_List(author,title,description,url,urlToImage,publishedAt,content)
             news_source_results.append(news_source_object)
     return news_source_results
 
